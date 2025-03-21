@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import FormFields from './FormFields'
+import ButtonGroup from './ButtonGroup'
 
 // คอมโพเนนต์สำหรับแสดงผลข้อมูลที่ส่ง
 const SurveyResult = ({ formData, onNewSurvey }) => {
@@ -14,17 +15,7 @@ const SurveyResult = ({ formData, onNewSurvey }) => {
           <p><strong>ความคิดเห็น:</strong> {formData.opinion}</p>
         )}
       </div>
-      <button className="btn primary" onClick={onNewSurvey}>ทำแบบสำรวจใหม่</button>
-    </div>
-  )
-}
-
-// คอมโพเนนต์สำหรับปุ่มในฟอร์ม
-const ButtonGroup = ({ onReset }) => {
-  return (
-    <div className="button-group">
-      <button type="submit" className="btn primary">ส่งแบบสำรวจ</button>
-      <button type="button" className="btn secondary" onClick={onReset}>รีเซ็ต</button>
+      <button className="submit-button" onClick={onNewSurvey}>ทำแบบสำรวจใหม่</button>
     </div>
   )
 }
