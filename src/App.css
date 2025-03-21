@@ -59,14 +59,44 @@ input, select, textarea {
   font-size: 1rem;
 }
 
-input.error, select.error {
+.error-input, input.error, select.error {
   border-color: #dc3545;
 }
 
-.error-text {
+.error-message, .error-text {
   color: #dc3545;
   font-size: 0.875rem;
   margin-top: 0.25rem;
+}
+
+/* Radio Buttons */
+.radio-option {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.radio-option:hover {
+  background-color: #e9ecef;
+}
+
+.radio-option input[type="radio"] {
+  width: auto;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.radio-option label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.director {
+  font-size: 0.875rem;
+  color: #6c757d;
 }
 
 .button-group {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import FormFields from './FormFields'
 
 // คอมโพเนนต์สำหรับแสดงผลข้อมูลที่ส่ง
 const SurveyResult = ({ formData, onNewSurvey }) => {
@@ -14,69 +15,6 @@ const SurveyResult = ({ formData, onNewSurvey }) => {
         )}
       </div>
       <button className="btn primary" onClick={onNewSurvey}>ทำแบบสำรวจใหม่</button>
-    </div>
-  )
-}
-
-// คอมโพเนนต์สำหรับช่องกรอกข้อมูลในฟอร์ม
-const FormFields = ({ formData, handleChange, errors }) => {
-  return (
-    <div className="form-fields">
-      <div className="form-group">
-        <label htmlFor="name">ชื่อ: <span className="required">*</span></label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className={errors.name ? 'error' : ''}
-        />
-        {errors.name && <p className="error-text">{errors.name}</p>}
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="email">อีเมล: <span className="required">*</span></label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className={errors.email ? 'error' : ''}
-        />
-        {errors.email && <p className="error-text">{errors.email}</p>}
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="favoriteMovie">ภาพยนตร์ที่ชื่นชอบ: <span className="required">*</span></label>
-        <select
-          id="favoriteMovie"
-          name="favoriteMovie"
-          value={formData.favoriteMovie}
-          onChange={handleChange}
-          className={errors.favoriteMovie ? 'error' : ''}
-        >
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="action">แอคชั่น</option>
-          <option value="comedy">ตลก</option>
-          <option value="drama">ดราม่า</option>
-          <option value="horror">สยองขวัญ</option>
-          <option value="scifi">ไซไฟ</option>
-        </select>
-        {errors.favoriteMovie && <p className="error-text">{errors.favoriteMovie}</p>}
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="opinion">ความคิดเห็นเพิ่มเติม:</label>
-        <textarea
-          id="opinion"
-          name="opinion"
-          value={formData.opinion}
-          onChange={handleChange}
-          rows="4"
-        ></textarea>
-      </div>
     </div>
   )
 }
