@@ -1,24 +1,8 @@
 import React, { useState } from 'react'
+import Header from './Header'
 import FormFields from './FormFields'
 import ButtonGroup from './ButtonGroup'
-
-// คอมโพเนนต์สำหรับแสดงผลข้อมูลที่ส่ง
-const SurveyResult = ({ formData, onNewSurvey }) => {
-  return (
-    <div className="result-container">
-      <h2>ขอบคุณสำหรับการตอบแบบสำรวจ!</h2>
-      <div className="result-info">
-        <p><strong>ชื่อ:</strong> {formData.name}</p>
-        <p><strong>อีเมล:</strong> {formData.email}</p>
-        <p><strong>ภาพยนตร์ที่ชื่นชอบ:</strong> {formData.favoriteMovie}</p>
-        {formData.opinion && (
-          <p><strong>ความคิดเห็น:</strong> {formData.opinion}</p>
-        )}
-      </div>
-      <button className="submit-button" onClick={onNewSurvey}>ทำแบบสำรวจใหม่</button>
-    </div>
-  )
-}
+import SurveyResult from './SurveyResult'
 
 const SurveyForm = () => {
   const [formData, setFormData] = useState({
@@ -137,6 +121,8 @@ const SurveyForm = () => {
   // แสดงแบบฟอร์ม
   return (
     <div className="form-container">
+      <Header />
+      
       <form onSubmit={handleSubmit}>
         <FormFields 
           formData={formData} 
